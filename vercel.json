@@ -8,7 +8,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "SGA/api/index.php"
+      "dest": "/api/index.php"
     }
   ]
 }

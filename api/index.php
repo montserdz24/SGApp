@@ -30,6 +30,13 @@
 
 
 
+
+
+
+        $conexion = mysqli_connect(getenv('MYSQL_HOST'), getenv('MYSQL_USER'), getenv('MYSQL_PASSWORD'), "SG");
+
+
+
 $clave = getenv('MYSQL_PASSWORD');
 
 error_log(
@@ -39,10 +46,6 @@ error_log(
     ', espacios_extremos=' .
     ($clave !== false && $clave !== trim($clave) ? 'SI' : 'NO')
 );
-
-
-
-        $conexion = mysqli_connect(getenv('MYSQL_HOST'), getenv('MYSQL_USER'), getenv('MYSQL_PASSWORD'), "SG");
 
         $cadenaSQL = "select * from s_customer";
         $resultado = mysqli_query($conexion, $cadenaSQL);

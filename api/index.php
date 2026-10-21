@@ -30,6 +30,17 @@
 
 
 
+$clave = getenv('MYSQL_PASSWORD');
+
+error_log(
+    'LAB03_DIAG: ' .
+    ($clave === false ? 'VARIABLE_AUSENTE' : 'VARIABLE_PRESENTE') .
+    ', longitud=' . ($clave === false ? 0 : strlen($clave)) .
+    ', espacios_extremos=' .
+    ($clave !== false && $clave !== trim($clave) ? 'SI' : 'NO')
+);
+
+
 
         $conexion = mysqli_connect(getenv('MYSQL_HOST'), getenv('MYSQL_USER'), getenv('MYSQL_PASSWORD'), "SG");
 

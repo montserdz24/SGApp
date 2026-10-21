@@ -28,6 +28,16 @@
       <tbody>
         <?php
 
+
+$clave = getenv('MYSQL_PASSWORD');
+
+error_log(
+    'LAB03_DIAG: presente=' . ($clave === false ? 'NO' : 'SI') .
+    ' longitud=' . ($clave === false ? 0 : strlen($clave)) .
+    ' espacios_extremos=' .
+    ($clave !== false && $clave !== trim($clave) ? 'SI' : 'NO')
+);
+
         $conexion = mysqli_connect(getenv('MYSQL_HOST'), getenv('MYSQL_USER'), getenv('MYSQL_PASSWORD'), "SG");
 
         $cadenaSQL = "select * from s_customer";

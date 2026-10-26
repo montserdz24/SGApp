@@ -29,20 +29,7 @@
         <?php
 
        
-$conexion = mysqli_init();
-
-mysqli_ssl_set($conexion, null, null, null, null, null);
-
-mysqli_real_connect(
-    $conexion,
-    getenv('MYSQL_HOST'),
-    getenv('MYSQL_USER'),
-    getenv('MYSQL_PASSWORD'),
-    'SG',
-    3306,
-    null,
-    MYSQLI_CLIENT_SSL
-);
+$conexion = mysqli_connect(getenv('MYSQL_HOST'), getenv('MYSQL_USER'), getenv('MYSQL_PASSWORD'), "SG");
         $cadenaSQL = "select * from s_customer";
         $resultado = mysqli_query($conexion, $cadenaSQL);
 
